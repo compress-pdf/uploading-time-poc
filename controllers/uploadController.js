@@ -24,6 +24,7 @@ exports.uploadLocal = (req, res) => {
 exports.uploadFirebase = async (req, res) => {
   try {
     const file = req.file;
+    console.log(file);
 
     if (!file) {
       return res
@@ -32,7 +33,7 @@ exports.uploadFirebase = async (req, res) => {
     }
 
     const fileRef = ref(storage, file.originalname);
-    const uploadResult = await uploadBytes(fileRef, file);
+    const uploadResult = await uploadBytes(fileRef, file.buffer);
     const url = await getDownloadURL(uploadResult.ref);
     res.status(200).send({ message: "File uploaded to Firebase!", url });
   } catch (error) {

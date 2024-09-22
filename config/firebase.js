@@ -6,12 +6,12 @@ const { getStorage } = require("firebase/storage");
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCgx-Z_OeU8g8-PYEL28wksTzxKYE_L0OI",
-  authDomain: "express-file-upload.firebaseapp.com",
-  projectId: "express-file-upload",
-  storageBucket: "express-file-upload.appspot.com",
-  messagingSenderId: "397585462001",
-  appId: "1:397585462001:web:ea402578e5182b07dd6f50",
+  apiKey: "AIzaSyDnMemoUBDgjXqQe--Tqrvb22trbsrA5aw",
+  authDomain: "grade-calculator-d4762.firebaseapp.com",
+  projectId: "grade-calculator-d4762",
+  storageBucket: "grade-calculator-d4762.appspot.com",
+  messagingSenderId: "600789154014",
+  appId: "1:600789154014:web:d1e4d4165f763ef4846a4f",
 };
 
 // Initialize Firebase
