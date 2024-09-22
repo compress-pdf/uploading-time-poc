@@ -13,6 +13,10 @@ app. use(bodyParser.json())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.use("/", (req, res) =>{
+  res.send("Hello, World!")
+  .status(200)
+})
 
 // Use upload routes
 app.use("/api", uploadRoutes);
