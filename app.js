@@ -13,6 +13,11 @@ app. use(bodyParser.json())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// add express-status-monitor
+const status = require('express-status-monitor');
+
+app.use(status());
+
 // app.use("/", (req, res) =>{
 //   res.send("Hello, World!")
 //   .status(200)
