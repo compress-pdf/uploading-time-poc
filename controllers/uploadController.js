@@ -3,7 +3,6 @@
 const { ref, uploadBytes, getDownloadURL } = require("firebase/storage");
 const storage = require("../config/firebase");
 const { PutObjectCommand, S3Client } = require("@aws-sdk/client-s3");
-const fs = require("fs");
 
 // Upload file to local storage
 exports.uploadLocal = (req, res) => {
@@ -24,8 +23,8 @@ exports.uploadLocal = (req, res) => {
 // Upload file to Firebase
 exports.uploadFirebase = async (req, res) => {
   try {
-    const file = fs.readFile("./uploads/100MB.pdf");
-    // console.log(file);
+    const file = req.file;
+    console.log(file);
 
     if (!file) {
       return res
@@ -55,8 +54,7 @@ exports.uploadCloudflare = async (req, res) => {
   });
 
   try {
-    const file = fs.readFile("./uploads/100MB.pdf");
-
+    const file = req.file;
     const buffer = file.buffer;
 
     const objectKey = `file-upload-test/${file.originalname}`;

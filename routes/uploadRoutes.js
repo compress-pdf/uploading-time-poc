@@ -34,5 +34,10 @@ router.get('/v1/read-file', (req, res)=>{
   })
 })
 
+router.get('/v1/read-file-stream', (req, res)=>{
+  const stream = fs.createReadStream("./uploads/100MB.pdf");
+  stream.on("data", (chunk)=> res.write(chunk));
+  stream.on("end", ()=>res.end());
+})
 
 module.exports = router;
